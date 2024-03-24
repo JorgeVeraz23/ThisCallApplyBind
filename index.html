@@ -3,7 +3,7 @@
     <body> 
         <script>
         
-        let aleatorio = Math.round(Math.random() * 100 + 5);
+       /* let aleatorio = Math.round(Math.random() * 100 + 5);
 
     const objUsuario = {
         propiedad: "Valor",
@@ -14,8 +14,79 @@
     
     usuarios.forEach((usuario, index) => objUsuario[`id_${index}`] = usuario);
 
-    console.log(objUsuario)
+    console.log(objUsuario)*/
+    /*
+    this.nombre = "Contexto Global";
+    console.log(this.nombre)
     
+    const imprimir = () => {
+        console.log(this.nombre);
+    }
+
+    imprimir();
+
+    const obj = {
+        nombre: "Contexto Objeto",
+        imprimir2: function(){
+            console.log(this.nombre)
+        }
+    }
+
+    obj.imprimir2();
+
+    const obj2 = {
+        nombre: "Contexto Objeto 2",
+        imprimir2
+    }
+
+    obj2.imprimir2();
+
+    function Persona(nombre){
+        this.nombre = nombre;
+
+        return () => console.log(this.nombre, 77);
+    }
+    let jon = new Persona("Jon");
+
+    jon();*/
+
+    console.log(this);
+    this.lugar = "Contexto Global";
+
+    function saludar(saludo, aQuien){
+        console.log(`${saludo} ${aQuien}desde el${this.lugar}`)
+    }
+
+
+    saludar();
+
+    const obj = {
+        lugar: "Contexto Objeto"
+    }
+
+    saludar.call(obj, "hola", "jorge");
+    saludar.call(null, "hola ", "jorge")
+    saludar.apply(obj, ["Adios", "Mircha"])
+    saludar.apply(this, ["hola", "jorge"])
+
+
+    const persona = {
+        nombre: "Jon",
+        saludar: function(){
+            console.log(`hola ${this.nombre}`)
+        }
+    }
+
+    persona.saludar();
+
+    const otraPersona = {
+        saludar: persona.saludar.bind(persona)
+    }
+
+    otraPersona.saludar();
+
+
+
 
     </script>
 </body>
