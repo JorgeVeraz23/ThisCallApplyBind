@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body> 
+        <script>
+        
+        let aleatorio = Math.round(Math.random() * 100 + 5);
+
+    const objUsuario = {
+        propiedad: "Valor",
+        [`id_${aleatorio}`]: "Valor Aleatorio"
+    };
+    const usuarios = ["Jon", "Irma", "Miguel", "kEnAi"];
+
+    
+    usuarios.forEach((usuario, index) => objUsuario[`id_${index}`] = usuario);
+
+    console.log(objUsuario)
+    
+
+    </script>
+</body>
+    </html>
+    
